@@ -9,6 +9,7 @@ public class Person {
     }
 
     public Person(String firstName, String lastName, String address, String city, String zip, String phone, String email) {
+
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
@@ -77,7 +78,7 @@ public class Person {
     @Override
     public String toString() {
         return "Person{" +
-                "firstName='" + firstName + '\'' +
+                ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", address='" + address + '\'' +
                 ", city='" + city + '\'' +

@@ -1,18 +1,22 @@
 package com.fireStation.model;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.Objects;
 
 public class MedicalRecords {
-    private Integer id;
-    private String firstName,lastName,medications,allergies;
-    private LocalDate birthdate;
+
+    private String firstName,lastName;
+    private String[] medications;
+    private String[] allergies;
+
+    private String birthdate;
 
     public MedicalRecords() {
     }
 
-    public MedicalRecords(Integer id, String firstName, String lastName, String medications, String allergies, LocalDate birthdate) {
-        this.id = id;
+    public MedicalRecords(Integer id, String firstName, String lastName, String[] medications, String[] allergies, String birthdate) {
+
         this.firstName = firstName;
         this.lastName = lastName;
         this.medications = medications;
@@ -20,13 +24,7 @@ public class MedicalRecords {
         this.birthdate = birthdate;
     }
 
-    public Integer getId() {
-        return id;
-    }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getFirstName() {
         return firstName;
@@ -44,38 +42,37 @@ public class MedicalRecords {
         this.lastName = lastName;
     }
 
-    public String getMedications() {
+    public String[] getMedications() {
         return medications;
     }
 
-    public void setMedications(String medications) {
+    public void setMedications(String[] medications) {
         this.medications = medications;
     }
 
-    public String getAllergies() {
+    public String[] getAllergies() {
         return allergies;
     }
 
-    public void setAllergies(String allergies) {
+    public void setAllergies(String[] allergies) {
         this.allergies = allergies;
     }
 
-    public LocalDate getBirthdate() {
+    public String getBirthdate() {
         return birthdate;
     }
 
-    public void setBirthdate(LocalDate birthdate) {
+    public void setBirthdate(String birthdate) {
         this.birthdate = birthdate;
     }
 
     @Override
     public String toString() {
         return "MedicalRecords{" +
-                "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", medications='" + medications + '\'' +
-                ", allergies='" + allergies + '\'' +
+                ", medications=" + Arrays.toString(medications) +
+                ", allergies=" + Arrays.toString(allergies) +
                 ", birthdate=" + birthdate +
                 '}';
     }
@@ -85,11 +82,14 @@ public class MedicalRecords {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         MedicalRecords that = (MedicalRecords) o;
-        return Objects.equals(id, that.id) && Objects.equals(firstName, that.firstName) && Objects.equals(lastName, that.lastName) && Objects.equals(medications, that.medications) && Objects.equals(allergies, that.allergies) && Objects.equals(birthdate, that.birthdate);
+        return Objects.equals(firstName, that.firstName) && Objects.equals(lastName, that.lastName) && Arrays.equals(medications, that.medications) && Arrays.equals(allergies, that.allergies) && Objects.equals(birthdate, that.birthdate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, firstName, lastName, medications, allergies, birthdate);
+        int result = Objects.hash(firstName, lastName, birthdate);
+        result = 31 * result + Arrays.hashCode(medications);
+        result = 31 * result + Arrays.hashCode(allergies);
+        return result;
     }
 }

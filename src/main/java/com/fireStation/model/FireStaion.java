@@ -4,33 +4,25 @@ import java.util.Objects;
 
 public class FireStaion {
 
-    private Integer id;
-    private String adress;
+    private String address;
     private String station;
 
     public FireStaion() {
     }
 
-    public FireStaion(Integer id, String adress, String station) {
-        this.id = id;
-        this.adress = adress;
+    public FireStaion(String address, String station) {
+
+        this.address = address;
         this.station = station;
     }
 
-    public Integer getId() {
-        return id;
+
+    public String getAddress() {
+        return address;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getAdress() {
-        return adress;
-    }
-
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getStation() {
@@ -44,22 +36,9 @@ public class FireStaion {
     @Override
     public String toString() {
         return "FireStaion{" +
-                "id=" + id +
-                ", adress='" + adress + '\'' +
+                ", address='" + address + '\'' +
                 ", station='" + station + '\'' +
                 '}';
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        FireStaion that = (FireStaion) o;
-        return Objects.equals(id, that.id) && Objects.equals(adress, that.adress) && Objects.equals(station, that.station);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, adress, station);
-    }
 }

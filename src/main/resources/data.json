@@ -1,5 +1,5 @@
 {
-  "persons": [
+  "persons":[
     {
       "firstName": "John",
       "lastName": "Boyd",
@@ -474,5 +474,4 @@
       "allergies": []
     }
   ]
-
 }
