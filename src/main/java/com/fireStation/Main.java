@@ -1,15 +1,8 @@
 package com.fireStation;
 
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.exc.StreamReadException;
-import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fireStation.model.FireStaion;
-import com.fireStation.model.MedicalRecords;
-import com.fireStation.model.Person;
 import com.fireStation.model.PersonParent;
-import com.fireStation.model2.Skills;
 
 import java.io.File;
 import java.io.IOException;
@@ -66,5 +59,6 @@ public class Main {
             e.printStackTrace();
 
     }
+
     }
 }

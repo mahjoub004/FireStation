@@ -1,16 +1,14 @@
 package com.fireStation.model;
 
-import java.util.Objects;
-
-public class FireStaion {
+public class FireStation {
 
     private String address;
     private String station;
 
-    public FireStaion() {
+    public FireStation() {
     }
 
-    public FireStaion(String address, String station) {
+    public FireStation(String address, String station) {
 
         this.address = address;
         this.station = station;
